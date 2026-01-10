@@ -1,0 +1,5 @@
+% npx @tailwindcss/cli -i myapp/static/myapp/src/input.css -o myapp/static/myapp/styles.css --watch   
+≈ tailwindcss v4.1.18
+
+Done in 46ms
+Done in 39µs
