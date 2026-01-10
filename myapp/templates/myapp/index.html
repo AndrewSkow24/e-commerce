@@ -10,7 +10,10 @@
 
 {% for item in items %}
 <p>
-  <a href="{% url 'myapp:detail' item.id %}">ID: {{item.id}}</a>
+  <a href="{% url 'myapp:detail' item.id %}"
+    >ID: {{item.id}}
+    <img src="{{item.image.url}}" alt="" />
+  </a>
 </p>
 <p>Товар: {{ item.name }}</p>
 <p>Цена: {{ item.name }}$</p>

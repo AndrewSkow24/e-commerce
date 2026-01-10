@@ -9,42 +9,7 @@
     <title>{% block title %} {% endblock title %}</title>
   </head>
   <body>
-    <nav class="bg-white shadow-lg">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-beetween">
-          <div class="flex space-x-7">
-            <div class="flex">
-              <a href="/" class="flex items-center px-2 py-4">
-                <img
-                  class="h-8 w-8"
-                  src="{% static 'myapp/images/logo.svg' %}"
-                  alt="logo"
-                />
-
-                <span class="text-gray-500 font-semibold text-xl"
-                  >Home Shop</span
-                >
-              </a>
-            </div>
-
-            <div class="item-center flex space-x-1">
-              <a
-                href=""
-                class="py-4 px-2 text-gray-500 font-semibod border-b-4 border-green-500"
-              >
-                Главная
-              </a>
-              <a href="" class="py-4 px-2 text-gray-500 font-semibod">
-                О компании
-              </a>
-              <a href="" class="py-4 px-2 text-gray-500 font-semibod">
-                Контакты
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    {% include 'myapp/nav.html' %}
 
     <!--  -->
     {% block content %} {% endblock content %}

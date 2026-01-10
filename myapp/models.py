@@ -5,6 +5,11 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     description = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="", blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Товар"
+        verbose_name_plural = "Товары"
 
     def __str__(self):
         return self.name
