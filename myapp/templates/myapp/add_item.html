@@ -1,0 +1,71 @@
+{% extends 'myapp/base.html' %}
+<!--  -->
+{% load humanize %}
+<!--  -->
+{% block title %} Добавить товар {% endblock title %}
+<!--  -->
+{% block content %}
+
+<div>
+  <h1 class="text-2xl m-10 font-bold text-green-600">
+    Добавление нового товара
+  </h1>
+  <form
+    class="bg-white shadow-md m-10 px-8 py-8"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <div class="mb-4">
+      <label class="block text-gray-700 text-md font-bold mb-2" for="name"
+        >Наименование</label
+      >
+      <input
+        class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700"
+        type="text"
+        placeholder="Наименование..."
+        name="name"
+        id="name"
+      />
+      <label class="block text-gray-700 text-md font-bold mb-2" for="price"
+        >Цена</label
+      >
+      <input
+        class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700"
+        type="number"
+        placeholder="Цена..."
+        name="price"
+        id="price"
+      />
+
+      <label
+        class="block text-gray-700 text-md font-bold mb-2"
+        for="description"
+        >Описание</label
+      >
+      <input
+        class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700"
+        type="text"
+        placeholder="Описание..."
+        name="description"
+        id="description"
+      />
+      <input
+        class="block mt-4"
+        type="file"
+        accept="image/"
+        placeholder="Изображение..."
+        name="upload"
+        id="upload"
+      />
+      <button
+        class="block bg-green-600 text-white p-3 mt-4"
+        type="submit"
+        name="add_item"
+      >
+        Добавить
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock content %}
