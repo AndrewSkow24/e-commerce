@@ -1,0 +1,45 @@
+{% extends 'myapp/base.html' %}
+<!---->
+{% block title %} Профиль {% endblock title %}
+<!---->
+{% block content %}
+<h1>Профиль</h1>
+{% if user.profile %}
+<div class="grid p-10 grid-cols-1 lg:grid-cols-3 sm:grid-cols-1">
+  <div class="rounded shadow-lg">
+    <div>
+      {% if user.profile.image %}
+      <img
+        class="w-[200px]"
+        src="{{ user.profile.image.url }}"
+        alt="user_avatar"
+      />
+      {% endif %}
+    </div>
+    <h1 class="font-bold text-lg">Профиль {{ user.username }}</h1>
+    <p>Контактный номер{{ user.profile.contact_number }}</p>
+    <!-- <p>Адрес изображения: </p> -->
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <h1>Создание профиля</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input
+      type="file"
+      accept="image/"
+      placeholder="Фото"
+      name="upload"
+      id="upload"
+    />
+    <input
+      type="tel"
+      placeholder="Контактный телефон"
+      name="contact_number"
+      id="contact_number"
+    />
+    <button type="submit">Создать профиль</button>
+  </form>
+</div>
+{% endif %} {% endblock content %}

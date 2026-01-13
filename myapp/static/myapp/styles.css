@@ -293,6 +293,9 @@
   .w-20 {
     width: calc(var(--spacing) * 20);
   }
+  .w-\[200\] {
+    width: 200;
+  }
   .w-\[200px\] {
     width: 200px;
   }
@@ -413,6 +416,10 @@
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
