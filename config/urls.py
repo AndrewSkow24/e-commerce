@@ -5,8 +5,13 @@ from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("myapp.urls", namespace="myapp")),
-    path("users/", include("users.urls", namespace="users")),
+    path("", include("products.urls", namespace="products")),
+    # path("", include("myapp.urls", namespace="myapp")),
+    # path("users/", include("users.urls", namespace="users")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+    path("__reload__/", include("django_browser_reload.urls")),
+]
