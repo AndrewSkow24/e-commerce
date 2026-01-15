@@ -1,4 +1,12 @@
-{% load static tailwind_tags %}
+<!-- https://django-bootstrap-v5.readthedocs.io/en/latest/quickstart.html -->
+<!--  -->
+{% load bootstrap5 %}
+<!--  -->
+{% bootstrap_css %}
+<!--  -->
+{% bootstrap_javascript %}
+<!--  -->
+{% bootstrap_messages %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,12 +14,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Без названия {% endblock title %}</title>
-    {% tailwind_css %}
   </head>
   <body>
     {% include 'includes/headers.html' %}
-    <div class="container">
-      {% block content %} Блок контента {% endblock content %}
-    </div>
+    <!--  -->
+    {% block content %} Блок контента {% endblock content %}
   </body>
 </html>

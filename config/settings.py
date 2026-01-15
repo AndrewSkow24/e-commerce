@@ -21,14 +21,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.humanize",
-    "tailwind",
-    "theme",
-    "products",
     # "users",
 ]
 
-INSTALLED_APPS += ["django_browser_reload"]
+INSTALLED_APPS += [
+    "products",
+    "bootstrap5",
+]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -40,9 +39,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-MIDDLEWARE += [
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
-]
 
 ROOT_URLCONF = "config.urls"
 
