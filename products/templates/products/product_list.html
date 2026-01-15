@@ -3,20 +3,60 @@
 {% block title %} Товары {% endblock title %}
 <!--  -->
 {% block content %}
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for product in object_list %}
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
-    <div class="col-4">Column</div>
+    <div class="col">
+      <div class="card h-100">
+        {% if product.image %}
+        <a
+          href="{% url 'products:product_detail' product.pk %}"
+          style="text-decoration: none; color: black"
+        >
+          <img
+            src="{{product.image.url}}"
+            class="card-img-top"
+            alt="изображение товара"
+          />
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{product.description}}</p>
+          </div>
+        </a>
+        <div class="card-footer">
+          <p class="card-text">Добавлено: {{ product.created_at }}</p>
+
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic mixed styles example"
+          >
+            <a
+              href="{% url 'products:product_detail' product.pk %}"
+              type="button"
+              class="btn btn-success"
+              >Подробнее</a
+            >
+            <a
+              href="{% url 'products:product_update' product.pk %}"
+              type="button"
+              class="btn btn-warning"
+              >Редактировать</a
+            >
+            <a
+              href="{% url 'products:product_delete' product.pk %}"
+              type="button"
+              class="btn btn-danger"
+              >Удалить</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
   </div>
 </div>
-
 {% endblock content %}

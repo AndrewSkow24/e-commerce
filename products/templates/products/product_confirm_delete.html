@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load bootstrap5 %}
+<!--  -->
+{% block title %} Удаление {{object}} {% endblock title %}
+<!--  -->
+{% block content %}
+<div class="container">
+  <form method="post" class="form">
+    <!--  -->
+    {% csrf_token %}
+    <!--  -->
+    <div class="alert alert-danger" role="alert">
+      Вы действительно хотите удалить "{{object}}" ?
+    </div>
+    {% buttons %}
+    <a href="{% url 'products:product_list' %}" class="btn btn-success"
+      >Отмена</a
+    >
+    <button type="submit" class="btn btn-danger">Подтвердить</button>
+    {% endbuttons %}
+  </form>
+</div>
+{% endblock content %}
