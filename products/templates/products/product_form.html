@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 <!---->
-{% load bootstrap5 %}
+{% load django_bootstrap5 %}
 <!---->
 {% block title %} {% if object %} Обновление {{object}} {% else %} Добавление
 товара {% endif %}
@@ -12,9 +12,7 @@
   <form method="post" class="form" enctype="multipart/form-data">
     {% csrf_token %} {% bootstrap_form form %}
     <!--    -->
-    {% buttons %}
     <button type="submit" class="btn btn-primary">Опубликовать</button>
-    {% endbuttons %}
   </form>
 </div>
 {% endblock content %}

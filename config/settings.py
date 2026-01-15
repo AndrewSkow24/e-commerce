@@ -26,7 +26,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS += [
     "products",
-    "bootstrap5",
+    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
