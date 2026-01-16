@@ -4,21 +4,15 @@ from .forms import NewUserForm, ProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Profile
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 
-def register(requset):
-    if requset.method == "POST":
-        form = NewUserForm(requset.POST)
-        if form.is_valid():
-            user = form.save()
-            login(requset, user)
-            return redirect("/")
-    form = NewUserForm()
-    context = {
-        "form": form,
-    }
-
-    return render(requset, "users/register.html", context)
+class UserCreateView(CreateView):
+    model = User
+    form_class = NewUserForm
+    template_name = "users/registration.html"
+    success_url = reverse_lazy("users:login")
 
 
 @login_required

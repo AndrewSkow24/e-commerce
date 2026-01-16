@@ -1,18 +1,14 @@
 from pathlib import Path
 import certifi
 import os
-from django.conf.global_settings import STATIC_ROOT
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 SECRET_KEY = "django-insecure-9-@0+9gt*uq0@f^g5i^4m20b7^dapsx$qi+i5dy_m+r##bn&u0"
-
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -21,11 +17,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "users",
 ]
 
 INSTALLED_APPS += [
     "products",
+    "users",
     "django_bootstrap5",
 ]
 

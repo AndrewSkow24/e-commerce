@@ -15,6 +15,10 @@ class ProductCreateView(CreateView):
     form_class = CreateProductForm
     success_url = reverse_lazy("products:product_list")
 
+    def form_valid(self, form):
+        form.instance.seller = self.request.user
+        return super().form_valid(form)
+
 
 class ProductListView(ListView):
     model = Product

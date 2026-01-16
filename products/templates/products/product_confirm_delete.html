@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load bootstrap5 %}
+{% extends 'base.html' %} {% load django_bootstrap5 %}
 <!--  -->
 {% block title %} Удаление {{object}} {% endblock title %}
 <!--  -->
@@ -11,12 +11,10 @@
     <div class="alert alert-danger" role="alert">
       Вы действительно хотите удалить "{{object}}" ?
     </div>
-    {% buttons %}
     <a href="{% url 'products:product_list' %}" class="btn btn-success"
       >Отмена</a
     >
     <button type="submit" class="btn btn-danger">Подтвердить</button>
-    {% endbuttons %}
   </form>
 </div>
 {% endblock content %}

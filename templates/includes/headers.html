@@ -28,12 +28,28 @@
     </ul>
     <div class="col-md-3 text-end">
       {% if user.is_authenticated %}
-      <button type="button" class="btn btn-outline-primary me-2">Войти</button>
-      <button type="button" class="btn btn-primary">Регистрация</button>
+      <a type="button" class="btn btn-outline-primary me-2">Профиль</a>
+      <form
+        style="display: inline"
+        action="{% url 'users:logout' %}"
+        method="post"
+      >
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Выйти</button>
+      </form>
       {% else %}
-
-      <button type="button" class="btn btn-outline-primary me-2">Войти</button>
-      <button type="button" class="btn btn-primary">Регистрация</button>
+      <a
+        href="{% url 'users:login' %}"
+        type="button"
+        class="btn btn-outline-primary me-2"
+        >Войти</a
+      >
+      <a
+        href="{% url 'users:registration' %}"
+        type="button"
+        class="btn btn-primary"
+        >Регистрация</a
+      >
       {% endif %}
     </div>
   </header>

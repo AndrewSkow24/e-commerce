@@ -30,8 +30,20 @@
           </p>
         </div>
         <div class="card-footer">
-          <a href="">Редактировать</a>
-          <a href="">Удалить</a>
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <a
+              href="{% url 'products:product_update' object.pk %}"
+              type="button"
+              class="btn btn-warning"
+              >Редактировать</a
+            >
+            <a
+              href="{% url 'products:product_delete' object.pk %}"
+              type="button"
+              class="btn btn-danger"
+              >Удалить</a>
+          </div>
+
         </div>
       </div>
     </div>
