@@ -22,6 +22,7 @@ class ProductCreateView(CreateView):
 
 class ProductListView(ListView):
     model = Product
+    paginate_by = 3
 
 
 class ProductDetailView(DetailView):
